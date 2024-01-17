@@ -37,7 +37,7 @@ function createNoteElement(id, content) {
   
       if (doDelete) {
         deleteNote(id, element);
-      }
+      };
     });
   
     return element;
@@ -50,12 +50,13 @@ function addNotes() {
         id: Math.floor(Math.random() * 10000),
         content: ""
     };
-}
+
 
     const noteElement = createNoteElement(noteObject.id, noteObject.content);
     notesContainer.insertBefore(noteElement, addNoteButton);
     existingNotes.push(noteObject);
     saveNotes(existingNotes);
+  }
 
 function updateNote(id, newContent) {
     console.log("updating Note..");
